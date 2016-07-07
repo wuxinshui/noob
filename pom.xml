@@ -9,7 +9,12 @@
     <packaging>pom</packaging>
     <name>noob</name>
     <modules>
+        <!--JAVA并发编程实践-->
         <module>concurrency-practice</module>
+        <!--代码战争-->
+        <module>codewars</module>
+        <!--Java编程思想-->
+        <module>thinking-in-java</module>
     </modules>
 
 </project>
