@@ -66,15 +66,12 @@ public class GapInPrimes {
      * @param p
      * @return
      */
-    public static boolean isPrimes(Long p) {
-        boolean primes = true;
-        Double half = Math.floor(p / 2);
-        for (int i = 2; i <= half.intValue(); i++) {
-            if (0 == (p.intValue() % i)) {
-                primes = false;
-                break;
+    public static boolean isPrimes(long p) {
+        for (int i = 2; i <= (p / 2); i++) {
+            if (0 == (p% i)) {
+                 return false;
             }
         }
-        return primes;
+        return true;
     }
 }
