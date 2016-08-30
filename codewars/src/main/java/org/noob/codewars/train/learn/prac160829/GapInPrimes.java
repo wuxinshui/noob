@@ -25,17 +25,26 @@ public class GapInPrimes {
         System.out.println(Arrays.toString(gap(g, m, n)));
     }
 
-
+    /**
+     * 1.素数的判断；
+     * 2.找到m-n范围内的所有素数
+     * 3.在所有素数中查找符合条件的第一对素数
+     *
+     * @param g
+     * @param m
+     * @param n
+     * @return
+     */
     public static long[] gap(int g, long m, long n) {
         // your code
         long[] result = new long[2];
         List<Long> primesList = getPrimes(m, n);
         if (null != primesList && primesList.size() > 0) {
-            for (int i = 0; i < primesList.size()-1; i++) {
-                Long gap = primesList.get(i+1) - primesList.get(i);
+            for (int i = 0; i < primesList.size() - 1; i++) {
+                Long gap = primesList.get(i + 1) - primesList.get(i);
                 if (gap.intValue() == g) {
                     result[0] = primesList.get(i);
-                    result[1] = primesList.get(i+1);
+                    result[1] = primesList.get(i + 1);
                     return result;
                 }
             }
@@ -68,8 +77,8 @@ public class GapInPrimes {
      */
     public static boolean isPrimes(long p) {
         for (int i = 2; i <= Math.sqrt(p); i++) {
-            if (0 == (p% i)) {
-                 return false;
+            if (0 == (p % i)) {
+                return false;
             }
         }
         return true;
