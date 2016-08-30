@@ -67,7 +67,7 @@ public class GapInPrimes {
      * @return
      */
     public static boolean isPrimes(long p) {
-        for (int i = 2; i <= (p / 2); i++) {
+        for (int i = 2; i <= Math.sqrt(p); i++) {
             if (0 == (p% i)) {
                  return false;
             }
