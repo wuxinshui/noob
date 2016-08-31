@@ -19,4 +19,40 @@ public class DirReductionTest {
                 new String[]{"NORTH", "WEST", "SOUTH", "EAST"},
                 DirReduction.dirReduc(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
     }
+
+    @Test
+    public void testDirReduc01()throws Exception{
+        assertEquals("\"NORTH\", \"SOUTH\", \"SOUTH\", \"EAST\", \"WEST\", \"NORTH\", \"WEST\"",
+                new String[]{"WEST"},
+                DirReductionBest.dirReduc01(new String[]{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"}));
+
+        assertEquals("\"NORTH\", \"WEST\", \"SOUTH\", \"EAST\"",
+                new String[]{"NORTH", "WEST", "SOUTH", "EAST"},
+                DirReductionBest.dirReduc01(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
+
+    }
+
+    @Test
+    public void testDirReduc02()throws Exception{
+        assertEquals("\"NORTH\", \"SOUTH\", \"SOUTH\", \"EAST\", \"WEST\", \"NORTH\", \"WEST\"",
+                new String[]{"WEST"},
+                DirReductionBest.dirReduc02(new String[]{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"}));
+
+        assertEquals("\"NORTH\", \"WEST\", \"SOUTH\", \"EAST\"",
+                new String[]{"NORTH", "WEST", "SOUTH", "EAST"},
+                DirReductionBest.dirReduc02(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
+
+    }
+
+    @Test
+    public void testDirReduc03()throws Exception{
+        assertEquals("\"NORTH\", \"SOUTH\", \"SOUTH\", \"EAST\", \"WEST\", \"NORTH\", \"WEST\"",
+                new String[]{"WEST"},
+                DirReductionBest.dirReduc03(new String[]{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"}));
+
+        assertEquals("\"NORTH\", \"WEST\", \"SOUTH\", \"EAST\"",
+                new String[]{"NORTH", "WEST", "SOUTH", "EAST"},
+                DirReductionBest.dirReduc03(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
+
+    }
 }
