@@ -3,6 +3,7 @@ package org.noob.codewars.train.learn.prac160831;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Stack;
 
 /**
  * Created by FujiRen on 2016/8/31.
@@ -20,11 +21,11 @@ public class DirReduction {
         ArrayList<String> arrayList = new ArrayList<>();
         Collections.addAll(arrayList, arr);
         arrayList=handle(arrayList);
-        String[] array=new String[arrayList.size()];
-        for (int i=0;i<arrayList.size();i++) {
-            array[i]=arrayList.get(i);
-        }
-        return array;
+//        String[] array=new String[arrayList.size()];
+//        for (int i=0;i<arrayList.size();i++) {
+//            array[i]=arrayList.get(i);
+//        }
+        return arrayList.toArray(new String[arrayList.size()]);
     }
 
     private static ArrayList<String>  handle(ArrayList<String> arrayList) {
@@ -57,5 +58,14 @@ public class DirReduction {
         return arrayList;
     }
 
+    public static String[] dirReducStack(String[] arr) {
+        Stack<String> stack=new Stack<>();
+        Collections.addAll(stack,arr);
+        String first=stack.pop();
+        switch (first){
+
+        }
+        return new String[]{};
+    }
 
 }
