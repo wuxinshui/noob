@@ -58,14 +58,4 @@ public class DirReduction {
         return arrayList;
     }
 
-    public static String[] dirReducStack(String[] arr) {
-        Stack<String> stack=new Stack<>();
-        Collections.addAll(stack,arr);
-        String first=stack.pop();
-        switch (first){
-
-        }
-        return new String[]{};
-    }
-
 }
