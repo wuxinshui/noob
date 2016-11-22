@@ -1,4 +1,4 @@
-package org.noob.imooc.socket;
+package org.noob.imooc.socket.chapter2;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
