@@ -89,9 +89,7 @@ public class Emirps {
      * @return
      */
     public static boolean isPrimeNum(long l) {
-        //默认是素数
-        double half = Math.floor(l / 2);
-        for (int i = 2; i <= half; i++) {
+        for (int i = 2; i <= Math.sqrt(l); i++) {
             if (0 == (l % i)) {
                 return false;
             }
