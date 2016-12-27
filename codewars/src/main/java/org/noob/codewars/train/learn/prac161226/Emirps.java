@@ -31,10 +31,10 @@ public class Emirps {
     }
 
     public static long[] findEmirp(long n) {
-        long size = 0;
-        long max = 0;
-        long sum = 0;
         List<Long> list = new ArrayList<>();
+        int sum=0;
+        int count=0;
+        long max=0;
         for (long i = 0; i < n; i++) {
             long reverseL = reverse(i);
             //判断不是回文数
@@ -42,25 +42,23 @@ public class Emirps {
                 continue;
             }
             //判断反转后的数字位数 10-01
-            if (String.valueOf(i).length() != String.valueOf(reverseL).length()) {
+            if (i!=reverse(reverseL)) {
                 continue;
             }
             //1.判断是否是素数
             //2.判断反转以后也是素数
             if (isPrimeNum(i) && isPrimeNum(reverseL)) {
-                list.add(i);
+                sum+=i;
+                count++;
+                if (i>=max){
+                    max=i;
+                }
             }
         }
-        if (null != list && !list.isEmpty()) {
-            size = list.size();
-            //4.求出最大值
-            Long[] array = list.toArray(new Long[list.size()]);
-            sort(array);
-            max = array[array.length - 1];
-            //5.求所有素数的和
-            sum = sum(array);
+        if (0!=sum&&0!=max) {
+            return new long[]{count,max,sum};
         }
-        return new long[]{size, max, sum};
+        return new long[]{0, 0, 0};
     }
 
     /**
@@ -70,8 +68,8 @@ public class Emirps {
      * @return
      */
     public static long reverse(long l) {
-        StringBuffer str = new StringBuffer(String.valueOf(l));
-        str = str.reverse();
+        StringBuilder str = new StringBuilder();
+        str =  str.append(l).reverse();
         return Long.parseLong(str.toString());
     }
 
