@@ -30,4 +30,11 @@ public class EvaluatorTest {
         assertEquals(10, eval.evaluate("2 3 9 4 / + *"));
         assertEquals(70, eval.evaluate("25 45 +"));
     }
+
+    @Test
+    public void test2() throws Exception {
+        BestPractice eval = new BestPractice();
+        assertEquals(10, eval.evaluator("2 3 9 4 / + *"));
+        assertEquals(70, eval.evaluator("25 45 +"));
+    }
 }
