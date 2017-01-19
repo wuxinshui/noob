@@ -16,6 +16,8 @@ package org.noob.codewars.train.learn.prac2017.prac170118;
  * limitations under the License.
  */
 
+import java.util.Arrays;
+
 /**
  * Created by wuxinshui on 2017/1/19.
  *
@@ -31,5 +33,14 @@ public class B {
 
 	public static void main(String[] args) {
 		System.out.println("X = "+A.X+", Y = "+B.Y);
+		calc(1,2,3);
+	}
+
+	/**
+	 * 变长参数
+	 * @param ins
+	 */
+	public static void calc(int... ins){
+		System.out.println(Arrays.toString(ins));
 	}
 }
