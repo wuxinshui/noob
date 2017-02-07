@@ -1,4 +1,4 @@
-package chapter2.item1.ServiceProviderFramework;
+package chapter2.item1.serviceProviderFramework;
 
 /**
  * Copyright [2017$] [Wuxinshui]
@@ -17,15 +17,9 @@ package chapter2.item1.ServiceProviderFramework;
  */
 
 /**
- * Created by wuxinshui on 2017/2/7.
- * 客户端类
+ * Created by wuxinshui on 2017/2/6.
+ * 服务接口
  */
-public class Client {
-	public static void main(String[] args) throws ClassNotFoundException {
-
-		//实例化提供者实现类，并注册服务
-		Class.forName("EntityProvider");
-		ServiceInterface service = ServiceManager.newInstance("ServiceInterfaceImpl");
-		service.serve();
-	}
+public interface ServiceInterface {
+	void serve();
 }

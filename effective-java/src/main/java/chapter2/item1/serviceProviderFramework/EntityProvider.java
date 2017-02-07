@@ -1,4 +1,4 @@
-package chapter2.item1.ServiceProviderFramework;
+package chapter2.item1.serviceProviderFramework;
 
 /**
  * Copyright [2017$] [Wuxinshui]
@@ -17,9 +17,17 @@ package chapter2.item1.ServiceProviderFramework;
  */
 
 /**
- * Created by wuxinshui on 2017/2/6.
- * 服务接口
+ * Created by wuxinshui on 2017/2/7.
+ * 服务提供者接口实现
  */
-public interface ServiceInterface {
-	void serve();
+public class EntityProvider implements ServiceProvider {
+
+	static {
+		ServiceManager.registProvider("ServiceInterfaceImpl",new EntityProvider());
+	}
+
+	@Override
+	public ServiceInterface newService() {
+		return new ServiceInterfaceImpl();
+	}
 }

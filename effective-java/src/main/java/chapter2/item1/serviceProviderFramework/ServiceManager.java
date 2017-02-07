@@ -1,4 +1,4 @@
-package chapter2.item1.ServiceProviderFramework;
+package chapter2.item1.serviceProviderFramework;
 
 /**
  * Copyright [2017$] [Wuxinshui]
