@@ -21,13 +21,14 @@ package chapter2.item2.telescopingConstructor;
  *
  * 重叠构造器模式
  */
+//Telescoping constructor pattern -does not scale well!
 public class NutritionFacts {
-	private final int servingSize;
-	private final int servings;
-	private final int calories;
-	private final int fat;
-	private final int sodium;
-	private final int carbohydrate;
+	private final int servingSize; //(ml)		required
+	private final int servings;//(per container) required
+	private final int calories;//				optional
+	private final int fat;//(g)					optional
+	private final int sodium;//(mg)				optional
+	private final int carbohydrate;//(g)		optional
 
 	public NutritionFacts(int servingSize, int servings) {
 		this(servingSize,servings,0);
