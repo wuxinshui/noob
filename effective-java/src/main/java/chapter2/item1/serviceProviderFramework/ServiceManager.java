@@ -27,6 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ServiceManager {
 
 	//Prevents instantiation
+	//阻止实例化，只能通过服务访问API来获取实例
 	private ServiceManager() {
 	}
 
