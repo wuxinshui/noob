@@ -15,6 +15,14 @@
         <module>codewars</module>
         <!--Java编程思想-->
         <module>thinking-in-java</module>
+        <!--爱慕课实战-->
+        <module>imooc-practice</module>
+        <!--Java核心技术练习-->
+        <module>java-core-practice</module>
+        <!--JVM核心技术练习-->
+        <module>jvm-core-practice</module>
+        <!--effective-java 第二版-->
+        <module>effective-java</module>
     </modules>
 
 </project>
