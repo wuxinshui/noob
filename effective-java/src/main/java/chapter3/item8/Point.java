@@ -30,12 +30,12 @@ public class Point {
 
 	@Override
 	public boolean equals(Object obj) {
-//		if (!(obj instanceof Point)) {
-//			return false;
-//		}
+		if (!(obj instanceof Point)) {
+			return false;
+		}
 		//getClass测试代替instanceof 测试
 		//只有当对象有相同的实现时，才能使对象等同
-		if (obj==null || this.getClass()!=obj.getClass()) return false;
+		//if (obj==null || this.getClass()!=obj.getClass()) return false;
 		Point p = (Point) obj;
 		return p.x == x && p.y == y;
 	}
