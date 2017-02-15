@@ -34,12 +34,13 @@ public class CaseInsensitiveString {
 	}
 
 	//Broken -violates symmetry
-	//equals方法的意图很好，它企图与普通的字符串（String）对象进行互操作。
+	//违反对称性
 	@Override
 	public boolean equals(Object o) {
 		if (o instanceof  CaseInsensitiveString){
 			return s.equalsIgnoreCase(((CaseInsensitiveString) o).s);
 		}
+		//equals方法的意图很好，它企图与普通的字符串（String）对象进行互操作。
 		if (o instanceof String){
 			return s.equalsIgnoreCase((String) o);
 		}
