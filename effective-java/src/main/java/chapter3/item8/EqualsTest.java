@@ -25,7 +25,25 @@ import java.util.List;
  */
 public class EqualsTest {
 	public static void main(String[] args) {
-		eq();
+		point1ComparePoint2();
+		//eq();
+	}
+
+	public static void point1ComparePoint2(){
+		//getClass测试代替instanceof 测试
+		//只有当对象有相同的实现时，才能使对象等同
+		//if (obj==null || getClass()!=obj.getClass()) return false;
+		Point point1=new Point1(1,2);
+		Point point2=new Point2(1,2);
+		Point point3=new Point2(1,2);
+
+		//不同实现的比较
+		System.out.println(point1.equals(point2));
+		System.out.println(point2.equals(point1));
+
+		//相同实现的比较
+		System.out.println(point2.equals(point3));
+
 	}
 
 	//集合比较，集合里面的每个元素都要比较

@@ -17,26 +17,11 @@ package chapter3.item8;
  */
 
 /**
- * Created by wuxinshui on 2017/2/13.
+ * Created by wuxinshui on 2017/2/15.
  */
-public class Point {
-	private final int x;
-	private final int y;
+public class Point2 extends Point {
 
-	public Point(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-//		if (!(obj instanceof Point)) {
-//			return false;
-//		}
-		//getClass测试代替instanceof 测试
-		//只有当对象有相同的实现时，才能使对象等同
-		if (obj==null || this.getClass()!=obj.getClass()) return false;
-		Point p = (Point) obj;
-		return p.x == x && p.y == y;
+	public Point2(int x, int y) {
+		super(x, y);
 	}
 }
