@@ -45,7 +45,10 @@ public class PhoneNumber {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+
+		//getClass测试代替instanceof 测试
+		//只有当对象有相同的实现时，才能使对象等同
+		if (!(o instanceof PhoneNumber)) return false;
 
 		PhoneNumber that = (PhoneNumber) o;
 
