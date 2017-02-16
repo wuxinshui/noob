@@ -19,6 +19,7 @@ package chapter3.item8;
 /**
  * Created by wuxinshui on 2017/2/13.
  */
+//子类增加的信息会影响equals比较的结果
 public class ColorPoint extends Point {
 	private final Color color;
 	public ColorPoint(int x, int y,Color color) {
