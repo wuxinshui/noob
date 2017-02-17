@@ -52,11 +52,14 @@ public class PerfectEquals {
 
 	@Override
 	public boolean equals(Object o) {
+		//1. 使用==操作符检查“参数是否为这个对象的引用”。
 		if (this == o) return true;
+		//2. 使用instanceof操作符检查“参数是否为正确的类型”。
 		if (!(o instanceof PerfectEquals)) return false;
-
+		//3. 把参数转化为正确的类型。
 		PerfectEquals that = (PerfectEquals) o;
 
+		//4. 对于该类的中每个关键域，检查参数中的域是否与该对象中对应的域想匹配。
 		if (x != that.x) return false;
 		if (c != that.c) return false;
 		if (Double.compare(that.d, d) != 0) return false;
@@ -75,6 +78,8 @@ public class PerfectEquals {
 		int result;
 		long temp;
 		result = x;
+		//31是一个奇素数，有个很好的特性，乘法可以优化为移位和减法：31*i==(i<<5)-i。
+		// 现在的VM可以自动完成这种优化。习惯上都使用素数来计算散列结果
 		result = 31 * result + (int) c;
 		temp = Double.doubleToLongBits(d);
 		result = 31 * result + (int) (temp ^ (temp >>> 32));
