@@ -3,20 +3,37 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>noob</artifactId>
+        <groupId>org.wuxinshui.noob</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.wuxinshui.noob</groupId>
+    <artifactId>concurrency-practice</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
     <dependencies>
         <dependency>
             <groupId>net.jcip</groupId>
             <artifactId>jcip-annotations</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
-    <parent>
-        <artifactId>noob</artifactId>
-        <groupId>org.wuxinshui.noob</groupId>
-        <version>0.0.1</version>
-    </parent>
 
-    <artifactId>concurrency-practice</artifactId>
+    <build>
+        <!--指定JDK版本-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
