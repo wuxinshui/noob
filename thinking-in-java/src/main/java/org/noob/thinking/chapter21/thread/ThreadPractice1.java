@@ -6,7 +6,7 @@ public class ThreadPractice1 implements Runnable {
 	public void run() {
 
 		for (int i = 0; i < 3; i++) {
-			System.out.println("#Thread " + i + "start");
+			System.out.println("#Thread " + i + "example");
 			Thread.yield();
 		}
 
