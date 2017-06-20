@@ -8,13 +8,14 @@ package chapter4.item22;
  */
 public class OuterStaticInnerClass {
 
-    private String sex;
+    private String teacher;
     private static int grade;//年级
     private static String className;//班级名称
 
     public OuterStaticInnerClass() {
         this.grade = 1;
         this.className = "高三";
+        this.teacher="王莉";
     }
 
     public static class PublicInnerCLass {
@@ -34,7 +35,7 @@ public class OuterStaticInnerClass {
         public String print() {
             //静态类可以访问外围类的静态成员
             System.out.println("OuterStaticInnerClass:PublicInnerCLass");
-            return name + " 年龄：" + age + ",班级：" + className + Integer.toString(grade)+"班";
+            return name + " 年龄：" + age + ",班级：" + className + Integer.toString(grade)+"班,老师："+new OuterStaticInnerClass().teacher;
         }
     }
 
