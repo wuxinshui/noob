@@ -6,34 +6,32 @@ package chapter4.item22;
  * @author wuxinshui
  */
 public class OuterLocalInnerClass {
-    private int age;//年龄
-    private String name;//名字
+    private String teacher;//老师
+    private static int grade;//年级
+    private static String className;//班级名称
 
-    //j静态成员类
-    private InnerCLass1 innerCLass1;
-    //非静态成员类
-    private InnerCLass2 innerCLass2;
-
-    static class InnerCLass1 {
-        private int grade;//年级
-        private String className;//班级名称
-    }
-
-    class InnerCLass2 {
-        private int grade;//年级
-        private String className;//班级名称
+    public OuterLocalInnerClass() {
+        this.grade = 1;
+        this.className = "高三";
+        this.teacher = "王莉";
     }
 
     //局部类
     public void InnerMethod() {
-        class InnerCLass3 {
-            private int grade;//年级
-            private String className;//班级名称
+       class InnerCLass3 {
+            private int age;//年龄
+            private String name;//名字
+
+            public InnerCLass3(int age, String name) {
+                this.age = age;
+                this.name = name;
+            }
         }
     }
 
     public static void main(String[] args) {
         OuterLocalInnerClass outerClass=new OuterLocalInnerClass();
+//        outerClass.new InnerCLass3(18, "lis");
     }
 
 }
