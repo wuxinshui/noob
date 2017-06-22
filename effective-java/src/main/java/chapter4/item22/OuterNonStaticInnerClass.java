@@ -16,6 +16,11 @@ public class OuterNonStaticInnerClass {
         this.teacher = "王莉";
     }
 
+    public void outerPrint() {
+        System.out.println("OuterNonStaticInnerClass.outerPrint");
+        System.out.println(className + grade + "班的老师是：" + teacher);
+    }
+
     public class PublicInnerCLass {
         private int age;//年龄
         private String name;//名字
@@ -31,7 +36,8 @@ public class OuterNonStaticInnerClass {
         }
 
         public String print() {
-            //静态类可以访问外围类的静态成员
+            // 非静态成员类的实例方法内部可以调用外围实例的方法和变量。
+            outerPrint();
             System.out.println("OuterStaticInnerClass:PublicInnerCLass");
             return name + " 年龄：" + age + ",班级：" + className + Integer.toString(grade) + "班,老师：" + teacher;
         }
@@ -41,19 +47,32 @@ public class OuterNonStaticInnerClass {
         private int age;//年龄
         private String name;//名字
 
-        public void print() {
-            System.out.println("OuterStaticInnerClass:InnerCLass1");
+        public PrivateInnerCLass() {
+
         }
+
+        public PrivateInnerCLass(int age, String name) {
+            this.age = age;
+            this.name = name;
+        }
+
+        public void print() {
+            System.out.println("OuterStaticInnerClass:PrivateInnerCLass");
+            System.out.println(name + " 年龄：" + age + ",班级：" + className + Integer.toString(grade) + "班,老师：" + teacher);
+        }
+
     }
 
     public static void main(String[] args) {
         //类内部实例化
-        // 如果静态成员类是私有的，只能在外围类的内部才能访问
-        OuterStaticInnerClass outerClass = new OuterStaticInnerClass();
-//        PrivateInnerCLass privateInnerCLass = new PrivateInnerCLass();
-        //chapter4.item22.OuterNonStaticInnerClass.this' cannot be referenced from a static context
-        //PublicInnerCLass publicInnerCLass=new PublicInnerCLass();
-//        PublicInnerCLass publicInnerCLass=new OuterNonStaticInnerClass().PublicInnerCLass;
+        // 非静态成员类的实例方法内部可以调用外围实例的方法。
+        //在没有外围实例的情况下，创建非静态成员类的实例是不可能的。
+        //非静态成员类的每个实例都隐含着与外围类的一个外围实例相关联。
+        OuterNonStaticInnerClass outerClass = new OuterNonStaticInnerClass();
+        PrivateInnerCLass privateInnerCLass = outerClass.new PrivateInnerCLass(18, "lis");
+        privateInnerCLass.print();
+        PublicInnerCLass publicInnerCLass = outerClass.new PublicInnerCLass(18, "lis");
+        System.out.println(publicInnerCLass.print());
     }
 
 }
