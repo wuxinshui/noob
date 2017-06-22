@@ -5,35 +5,25 @@ package chapter4.item22;
  *
  * @author wuxinshui
  */
-public class OuterAnonymousInnerClass {
-    private int age;//年龄
-    private String name;//名字
+public abstract class OuterAnonymousInnerClass {
 
-    //j静态成员类
-    private InnerCLass1 innerCLass1;
-    //非静态成员类
-    private InnerCLass2 innerCLass2;
-
-    static class InnerCLass1 {
-        private int grade;//年级
-        private String className;//班级名称
-    }
-
-    class InnerCLass2 {
-        private int grade;//年级
-        private String className;//班级名称
-    }
-
-    //局部类
-    public void InnerMethod() {
-        class InnerCLass3 {
-            private int grade;//年级
-            private String className;//班级名称
-        }
-    }
+    //成员方法
+    public abstract void innerMethod(int age, String name);
 
     public static void main(String[] args) {
-        OuterAnonymousInnerClass outerClass=new OuterAnonymousInnerClass();
+        OuterAnonymousInnerClass outerClass = new OuterAnonymousInnerClass() {
+            private String teacher = "王莉";
+
+            //Inner classes cannot have static declarations
+//            private static int grade;//年级
+//            private static String className;//班级名称
+            @Override
+            public void innerMethod(int age, String name) {
+                System.out.println("OuterAnonymousInnerClass innerMethod");
+                System.out.println(name + " 年龄：" + age + "老师：" + teacher);
+            }
+        };
+        outerClass.innerMethod(18, "lis");
     }
 
 }

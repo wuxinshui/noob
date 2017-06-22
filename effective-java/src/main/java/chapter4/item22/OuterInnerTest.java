@@ -7,8 +7,9 @@ package chapter4.item22;
  */
 public class OuterInnerTest {
     public static void main(String[] args) {
-        outerStaticInnerClassTest();
+//        outerStaticInnerClassTest();
 //        outerNonStaticInnerClassTest();
+        outerAnonymousInnerInterTest();
     }
 
     /**
@@ -25,7 +26,7 @@ public class OuterInnerTest {
         System.out.println(publisInnerCLass.print());
     }
 
-    public static void outerNonStaticInnerClassTest(){
+    public static void outerNonStaticInnerClassTest() {
         //类内部实例化
         // 非静态成员类的实例方法内部可以调用外围实例的方法。
         //在没有外围实例的情况下，创建非静态成员类的实例是不可能的。
@@ -36,5 +37,28 @@ public class OuterInnerTest {
         //privateInnerCLass.print();
         OuterNonStaticInnerClass.PublicInnerCLass publicInnerCLass = outerClass.new PublicInnerCLass(18, "lis");
         System.out.println(publicInnerCLass.print());
+    }
+
+    public static void outerAnonymousInnerInterTest() {
+        OuterAnonymousInnerInter innerInter = new OuterAnonymousInnerInter() {
+            private String teacher = "王莉";
+            @Override
+            public void print(int age, String name) {
+                System.out.println("OuterAnonymousInnerInter anonymous inner class");
+                System.out.println(name + " 年龄：" + age + "老师：" + teacher);
+            }
+        };
+        innerInter.print(18, "lis");
+
+
+        OuterAnonymousInnerClass outerClass = new OuterAnonymousInnerClass() {
+            private String teacher = "王莉";
+            @Override
+            public void innerMethod(int age, String name) {
+                System.out.println("OuterAnonymousInnerClass innerMethod");
+                System.out.println(name + " 年龄：" + age + "老师：" + teacher);
+            }
+        };
+        outerClass.innerMethod(18, "lis");
     }
 }
