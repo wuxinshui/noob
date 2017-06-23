@@ -17,7 +17,7 @@ public class OuterLocalInnerClass {
     }
 
     //局部类
-    public void InnerMethod() {
+    public void innerMethod() {
        class InnerCLass3 {
             private int age;//年龄
             private String name;//名字
@@ -27,11 +27,14 @@ public class OuterLocalInnerClass {
                 this.name = name;
             }
         }
+        InnerCLass3 innerCLass3=new InnerCLass3(18, "lis");
+        System.out.println(innerCLass3.name + " 年龄：" + innerCLass3.age);
+        System.out.println(className + grade + "班的老师是：" + teacher);
     }
 
     public static void main(String[] args) {
         OuterLocalInnerClass outerClass=new OuterLocalInnerClass();
-//        outerClass.new InnerCLass3(18, "lis");
+        outerClass.innerMethod();
     }
 
 }

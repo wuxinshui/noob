@@ -9,7 +9,8 @@ public class OuterInnerTest {
     public static void main(String[] args) {
 //        outerStaticInnerClassTest();
 //        outerNonStaticInnerClassTest();
-        outerAnonymousInnerInterTest();
+//        outerAnonymousInnerInterTest();
+        outerLocalInnerClassTest();
     }
 
     /**
@@ -60,5 +61,10 @@ public class OuterInnerTest {
             }
         };
         outerClass.innerMethod(18, "lis");
+    }
+
+    public static void outerLocalInnerClassTest(){
+        OuterLocalInnerClass outerClass=new OuterLocalInnerClass();
+        outerClass.innerMethod();
     }
 }
