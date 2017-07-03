@@ -6,6 +6,10 @@ import java.util.*;
  * <p>GenericMethod</p>
  * 优先考虑泛型方法
  * 静态工具方法尤其适合于泛型化
+ * <p>
+ * 恒等函数：identity function，是无状态的。its type parameter is unbounded so it's safe to share one instance across all types。
+ * <p>
+ * 递归类型限制：recursive type bound。通过某个包含该类型参数本身的表达式来限制类型参数是允许的。这就是递归类型限制。
  *
  * @author wuxinshui
  */
