@@ -19,7 +19,10 @@ public class Favorites {
         if (null == type) {
             throw new NullPointerException();
         }
-        favorites.put(type, instance);
+        //恶意的客户端可以很轻松破坏Favorites实例的类型安全
+        //确保Favorites永远不违背他的类型约束条件就是检验instance是否真的是type所表示类型的实例。
+        // favorites.put(type, instance);
+        favorites.put(type, type.cast(instance));
     }
 
     public <T> T getFavorite(Class<T> type) {
