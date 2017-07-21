@@ -1,7 +1,7 @@
 # noob
 >If I have been able to see further, it was only because I stood on the shoulders of giants.
 
-** 从菜鸟到老鸟，站在巨人的肩上，记录一步步的脚印。**
+**从菜鸟到老鸟，站在巨人的肩上，记录一步步的脚印。**
 
 ## Effective Java 第二版
 **effective-java**
