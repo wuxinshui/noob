@@ -1,7 +1,6 @@
-package chapter4.item23;
+package chapter5.item23;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**

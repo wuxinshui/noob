@@ -1,9 +1,4 @@
-package chapter4.item25;
-
-import sun.net.www.content.text.Generic;
-
-import java.util.ArrayList;
-import java.util.List;
+package chapter5.item25;
 
 /**
  * <p>ArraysListTest</p>
