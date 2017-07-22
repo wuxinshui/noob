@@ -45,7 +45,9 @@ public class HerbTest {
 
     //Using an EnumMap to associate data with an enum
     public void herbEnumMap() {
-
+        //EnumMap 构造器采用键类型的Class对象：
+        // 这是一个有限制的类型令牌（bounded type token）,
+        // 它提供了运行时的泛型消息
         Map<Herb.Type, Set<Herb>> herbByType = new EnumMap<>(Herb.Type.class);
 
         //存贮所有的类型
