@@ -1,4 +1,4 @@
-package chapter4.item25;
+package chapter5.item25;
 
 /**
  * <p>CodeCommentTest</p>

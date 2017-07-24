@@ -1,4 +1,4 @@
-package chapter4.item24;
+package chapter5.item24;
 
 /**
  * <p>SuppressWarningsTest</p>
