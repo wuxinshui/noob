@@ -13,9 +13,9 @@ public class ArrayListConcurrentTest {
 		Thread thread1 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 0; i < 100; i++) {
+				for (int i = 0; i < 1000; i++) {
 					System.out.println("进入Runner1运行状态——————————" + i);
-					concurrent.test("Runner1");
+					concurrent.test("Runner1",1);
 				}
 			}
 		});
@@ -24,9 +24,9 @@ public class ArrayListConcurrentTest {
 		Thread thread2 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 0; i < 100; i++) {
+				for (int i = 0; i < 1000; i++) {
 					System.out.println("进入Runner2运行状态——————————" + i);
-					concurrent.test("Runner2");
+					concurrent.test("Runner2",4);
 				}
 			}
 		});

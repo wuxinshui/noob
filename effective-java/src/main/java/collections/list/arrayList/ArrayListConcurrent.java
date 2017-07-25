@@ -1,7 +1,6 @@
 package collections.list.arrayList;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,15 +12,20 @@ public class ArrayListConcurrent {
 
 	//private List<Integer> uplayerList = new ArrayList<>();
 	//private List<Integer> uplayerList = Collections.synchronizedList(new ArrayList<>());
-	private  List<Integer>  uplayerList;
+	private List<Integer> uplayerList;
 
-	public void test(String msg) {
-		uplayerList = new ArrayList<>();
-		//uplayerList = Collections.synchronizedList(new ArrayList<>());
-		test1(1);
-		test2(2);
-		test3(3);
-		System.out.println(msg+" : "+uplayerList);
+	public void test(String msg, int i) {
+
+		synchronized (this) {
+			uplayerList = new ArrayList<>();
+
+			//uplayerList = Collections.synchronizedList(new ArrayList<>());
+			test1(i);
+			test2(i + 1);
+			test3(i + 2);
+			System.out.println(msg + " : " + uplayerList);
+		}
+
 	}
 
 
