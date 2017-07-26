@@ -7,7 +7,8 @@ package collections.list.arrayList;
  */
 public class ArrayListConcurrentTest {
 	public static void main(String[] args) {
-		ArrayListConcurrent concurrent = new ArrayListConcurrent();
+		ArrayListConcurrentSynchronized concurrent = new ArrayListConcurrentSynchronized();
+		//ArrayListConcurrentReference concurrent = new ArrayListConcurrentReference();
 
 		//线程1
 		Thread thread1 = new Thread(new Runnable() {
