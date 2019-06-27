@@ -35,6 +35,8 @@ public class GenerateStream {
         Random random = new Random();
         Supplier<Integer> supplier = random::nextInt;
         Stream.generate(supplier).limit(5).forEach(System.out::println);
+        System.out.println("Stream.iterate--------------------");
+        Stream.iterate(0,n->n+3).limit(5).forEach(System.out::println);
 
     }
 }
