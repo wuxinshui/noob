@@ -1,4 +1,4 @@
-package stream;
+package java8.stream;
 
 import java.util.List;
 import java.util.Random;
@@ -25,9 +25,9 @@ public class GenerateStream {
         List.of("aa", "er").stream().sorted().forEach(System.out::println);
         System.out.println("List.of Integer String--------------------");
         //java.lang.ClassCastException: java.base/java.lang.String cannot be cast to java.base/java.lang.Integer
-        //List.of("aa",23,"23","34").stream().sorted().forEach(System.out::println);
+        //List.of("aa",23,"23","34").java8.stream().sorted().forEach(System.out::println);
         //Exception in thread "main" java.lang.ClassCastException: java.base/java.lang.Integer cannot be cast to java.base/java.lang.String
-        //List.of(23,"23","34").stream().sorted().forEach(System.out::println);
+        //List.of(23,"23","34").java8.stream().sorted().forEach(System.out::println);
         List.of("aa", 23, "23", "34").stream().forEach(System.out::println);
         System.out.println("List.of String Integer--------------------");
         List.of(23, "23", "34").stream().forEach(System.out::println);
