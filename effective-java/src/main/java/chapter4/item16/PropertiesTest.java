@@ -1,6 +1,5 @@
 package chapter4.item16;
 
-import org.omg.CORBA.OBJ_ADAPTER;
 
 import java.util.Hashtable;
 import java.util.Properties;
