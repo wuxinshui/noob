@@ -65,5 +65,7 @@ public class InterruptLock implements Runnable {
 
         thread1.join();
         thread2.join();
+
+        thread1.interrupt();
     }
 }
