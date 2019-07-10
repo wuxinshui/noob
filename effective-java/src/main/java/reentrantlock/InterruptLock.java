@@ -14,44 +14,39 @@ public class InterruptLock implements Runnable {
 
     @Override
     public void run() {
-        if (i == 1) {
-            try {
+        try {
+            if (i == 1) {
                 System.out.println(Thread.currentThread() + "ready to get lock1");
                 lock1.lockInterruptibly();
                 System.out.println(Thread.currentThread() + "get lock1");
                 Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            try {
                 System.out.println(Thread.currentThread() + "ready to get lock2");
                 lock2.lockInterruptibly();
                 System.out.println(Thread.currentThread() + "get lock2");
                 Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        } else {
-
-            try {
+            } else {
                 System.out.println(Thread.currentThread() + "ready to get lock2");
                 lock2.lockInterruptibly();
                 System.out.println(Thread.currentThread() + "get lock2");
                 Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
 
-            try {
                 System.out.println(Thread.currentThread() + "ready to get lock1");
                 lock1.lockInterruptibly();
                 System.out.println(Thread.currentThread() + "get lock1");
                 Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            }
+        } catch (InterruptedException ex) {
+        } finally {
+            if (lock1.isHeldByCurrentThread()) {
+                lock1.unlock();
             }
 
+            if (lock2.isHeldByCurrentThread()) {
+                lock2.unlock();
+            }
+
+            System.out.println(Thread.currentThread()+"线程退出");
         }
     }
 
