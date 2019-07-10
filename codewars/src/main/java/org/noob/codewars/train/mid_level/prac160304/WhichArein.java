@@ -96,9 +96,9 @@ public class WhichArein {
 	 * @return
 	 */
 	// public static String[] inArray2(String[] array1,String[] array2){
-	// return Arrays.stream(array1)
+	// return Arrays.java8.stream(array1)
 	// .filter(str ->
-	// Arrays.stream(array2).anyMatch(s -> s.contains(str)))
+	// Arrays.java8.stream(array2).anyMatch(s -> s.contains(str)))
 	// .distinct()
 	// .sorted()
 	// .toArray(String[]::new);
