@@ -24,7 +24,15 @@ public class ListBeanSort {
         private int age;
         private String name;
 
-        public Student(int age, String name) {
+       @Override
+       public String toString() {
+           return "Student{" +
+                   "age=" + age +
+                   ", name='" + name + '\'' +
+                   '}';
+       }
+
+       public Student(int age, String name) {
             this.age = age;
             this.name = name;
         }
