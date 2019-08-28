@@ -23,7 +23,7 @@ public class ListBeanSort {
         });
 
         //降序排列
-        students = students.parallelStream().sorted(Comparator.comparing(Student::getAge).reversed()).collect(Collectors.toList());
+        students = students.parallelStream().sorted(Comparator.comparing(Student::getName).reversed()).collect(Collectors.toList());
         System.out.println("降序排列。。。。。。。。。");
         students.parallelStream().forEach(System.out::println);
     }
