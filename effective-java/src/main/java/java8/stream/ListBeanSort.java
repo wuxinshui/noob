@@ -1,8 +1,8 @@
 package java8.stream;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Author: yoyo
@@ -12,29 +12,38 @@ import java.util.List;
 public class ListBeanSort {
 
     public static void main(String[] args) {
-        List<Student> students = List.of(new Student(12,"Ricky"),new Student(24,"Dan"),new Student(30,"Cusy"));
+        List<Student> students = List.of(new Student(42, "Ricky"), new Student(24, "Dan"), new Student(30, "Cusy"));
 
-        students.parallelStream().sorted(Comparator.comparing(Student::getAge));
+        //升序排列
+        students = students.parallelStream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
 
-        System.out.println(students);
+        System.out.println("升排列。。。。。。。。。");
+        students.parallelStream().forEach(o -> {
+            System.out.println(o);
+        });
+
+        //降序排列
+        students = students.parallelStream().sorted(Comparator.comparing(Student::getAge).reversed()).collect(Collectors.toList());
+        System.out.println("降序排列。。。。。。。。。");
+        students.parallelStream().forEach(System.out::println);
     }
 
 
-   static class Student {
+    static class Student {
         private int age;
         private String name;
 
-       @Override
-       public String toString() {
-           return "Student{" +
-                   "age=" + age +
-                   ", name='" + name + '\'' +
-                   '}';
-       }
-
-       public Student(int age, String name) {
+        public Student(int age, String name) {
             this.age = age;
             this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "Student{" +
+                    "age=" + age +
+                    ", name='" + name + '\'' +
+                    '}';
         }
 
         public int getAge() {
