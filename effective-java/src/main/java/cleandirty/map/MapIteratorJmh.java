@@ -1,12 +1,12 @@
 package cleandirty.map;
 
-import org.junit.Before;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -25,17 +25,13 @@ import java.util.stream.Stream;
 @Fork(2)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 public class MapIteratorJmh {
-    public static final String path = "D:\\git\\github\\noob\\effective-java\\src\\main\\java\\cleandirty\\map";
-    private Map<String, Integer> map = Map.of();
+    public static final String path = "D:\\git\\github\\noob\\effective-java\\src\\main\\java\\cleandirty\\map\\benchmark-map-iterator.log";
 
-    public static void main(String[] args) throws RunnerException {
-        System.out.println("map iterator jmh test start......");
-        Options options = new OptionsBuilder().include(MapIteratorJmh.class.getSimpleName()).output(path).build();
-        new Runner(options).run();
-    }
+    private static Map<String, Integer> map;
 
-    @Before
-    public void before() {
+    //@Before
+    static {
+        map = new HashMap<>();
         Random random = new Random(100);
         Supplier<Integer> supplier = random::nextInt;
         Stream.generate(supplier).limit(1000).forEach(o -> {
@@ -43,6 +39,11 @@ public class MapIteratorJmh {
         });
     }
 
+    public static void main(String[] args) throws RunnerException {
+        System.out.println("map iterator jmh test start......");
+        Options options = new OptionsBuilder().include(MapIteratorJmh.class.getSimpleName()).output(path).build();
+        new Runner(options).run();
+    }
 
     @Benchmark
     public void keysIterator() {
