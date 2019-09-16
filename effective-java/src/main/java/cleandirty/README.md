@@ -1,0 +1,3 @@
+消灭JAVA坏味道
+
+[消灭 Java 代码的“坏味道”](https://mp.weixin.qq.com/s?__biz=MzU4NzU0MDIzOQ==&mid=2247487714&idx=1&sn=8f9de656a4abe236b16415e6ecaa5f9d&chksm=fdeb2282ca9cab9433e05b287e0e690185a4768512ba605ae0fb2463a2347e8730439f19ff14&mpshare=1&scene=1&srcid=&sharer_sharetime=1568204531186&sharer_shareid=98406dcc2d64921ce8383a25a054ad0e&key=5a37b8e9f2933463524763f85a7a6961d54844cc171ed0d238cce8e34438a30ac67b97e88e6f898860853cf6d424539047b7044c5f6460cb41a9bc796b4dbe90f8053989b14cb16b959e34a40ecae250&ascene=1&uin=MjYwMDYwOTI4MQ%3D%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=JaKU5Gmv%2FM2BEwdf4a18dH3cTGZcT46iJY0O%2BKb%2F6vaYGSZp3ke9BnUpEO7Ygu25)
