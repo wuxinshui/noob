@@ -12,5 +12,8 @@ public class ByteFinal {
         final byte bt2 = 2;
         byte bt3 = bt1 + bt2;
         System.out.println(bt3);
+//        相反数
+        byte a = 1;
+        System.out.println(~a);
     }
 }
