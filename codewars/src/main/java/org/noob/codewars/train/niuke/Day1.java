@@ -7,14 +7,20 @@ package org.noob.codewars.train.niuke;
 public class Day1 {
     public static void main(String[] args) {
         Day1 day1=new Day1();
-        int n=4;
-        System.out.println(day1.ternaryPlus(n));
+        int k=4;
+        System.out.println(day1.ternaryPlus(k));
+        System.out.println(day1.andPlus(k));
     }
 
     public  int ternaryPlus(int n) {
         int sum = n;
-        boolean flag=n==0?false:(sum+=ternaryPlus(n--))>0;
+        boolean flag=n==0?false:(sum+=ternaryPlus(--n))>0;
+        return sum;
+    }
 
+    public  int andPlus(int n) {
+        int sum = n;
+        boolean flag=n==0&&(sum+=ternaryPlus(--n))>0;
         return sum;
     }
 
