@@ -2,6 +2,7 @@ package org.noob.codewars.train.leetcode.day1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -34,24 +35,25 @@ public class Solution {
     public static int[] twoSum9(int[] nums, int target) {
         //Arrays.asList(nums).stream().filter(o->o<target).collect(Collectors.toList());
         //Stream.of(nums).filter(o -> o < target).collect(Collectors.toList());
+        List<Integer> linked=new LinkedList<>();
         int[] temp = new int[nums.length];
-        int k=0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > target) {
                 break;
             }
-            for (int j = 0; j < nums.length; i++) {
-                if (nums[i] > target) {
+            for (int j = 0; j < nums.length; j++) {
+                if (nums[j] > target) {
                     break;
                 }
                 if (nums[i] + nums[j] == target) {
-                    temp[k]=i;
-                    k++;
-                    temp[k]=j;
-                    k++;
+                    temp[i]=i;
+                    temp[j]=j;
+                    linked.add(i);
+                    linked.add(j);
                 }
             }
         }
+        System.out.println(linked);
         return temp;
     }
 }
