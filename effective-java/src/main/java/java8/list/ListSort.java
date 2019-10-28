@@ -10,6 +10,10 @@ public class ListSort {
         Collections.sort(names, String::compareTo);
         System.out.println(names);
         Collections.sort(names,(String a,String b)->a.compareTo(b));
+        names.sort((a,b)->a.compareTo(b));
+        System.out.println(names);
+
+        names.sort((a, b) -> a.compareTo(b));
         System.out.println(names);
 
     }
