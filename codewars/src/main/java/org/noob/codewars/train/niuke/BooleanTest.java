@@ -13,5 +13,11 @@ public class BooleanTest {
         } else {
             System.out.println("false");
         }
+
+        if (falg = false) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 }
