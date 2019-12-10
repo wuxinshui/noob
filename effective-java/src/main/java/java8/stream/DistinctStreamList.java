@@ -14,5 +14,9 @@ public class DistinctStreamList {
         System.out.println(list);;
         list= list.parallelStream().distinct().collect(Collectors.toList());
         System.out.println(list);
+
+        List<Integer> integerList=List.of(1,2,3);
+        integerList=integerList.subList(0,5);
+        System.out.println(integerList);
     }
 }
