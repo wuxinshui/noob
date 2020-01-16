@@ -13,7 +13,8 @@ public class LocalDateTimeTest {
         //    获取秒
         long second = LocalDateTime.now().getSecond();
         System.out.println(second);
-        long second1 = LocalDateTime.now().toEpochSecond(ZoneOffset.of("+8"));
+        //long second1 = LocalDateTime.now().toEpochSecond(ZoneOffset.of("+8"));
+        long second1 = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
         System.out.println("second1 "+second1);
         long sd = LocalDateTime.now().atOffset(ZoneOffset.of("+8")).getSecond();
         System.out.println("getSecond "+sd);
