@@ -1,7 +1,7 @@
 package java8.localdatetime;
 
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.*;
+import java.util.Date;
 
 /**
  * @Author: yoyo
@@ -10,6 +10,11 @@ import java.time.ZoneOffset;
  */
 public class LocalDateTimeTest {
     public static void main(String[] args) {
+        // test1();
+        milliLong();
+    }
+
+    private static void test1() {
         //打印当前时间
         System.out.println(LocalDateTime.now());
         //当前时间-秒
@@ -27,5 +32,19 @@ public class LocalDateTimeTest {
         //毫秒
         long ms = LocalDateTime.now().toInstant(ZoneOffset.of("+8")).toEpochMilli();
         System.out.println(ms);
+    }
+
+    public static void milliLong() {
+        String time = "1573008898000";
+        LocalDateTime localDateTime = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalDateTime();
+        System.out.println("localDateTime: " + localDateTime);
+        LocalDate localDate = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println("localDate: " + localDate);
+        LocalTime localTime = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalTime();
+        System.out.println("localTime: " + localTime);
+        Instant instant = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toInstant();
+        System.out.println("instant: " + instant);
+        Date date = Date.from(instant);
+        System.out.println("date:-" + date);
     }
 }
