@@ -1,6 +1,7 @@
 package java8.localdatetime;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -42,6 +43,10 @@ public class LocalDateTimeTest {
         System.out.println("localDate: " + localDate);
         LocalTime localTime = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalTime();
         System.out.println("localTime: " + localTime);
+        LocalDateTime localDateTime2 = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalDateTime();
+        System.out.println("localDateTime2: " + localDateTime2);
+        System.out.println("localDateTime ISO_LOCAL_DATE_TIME: " + localDateTime2.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        System.out.println("localDateTime ofPattern: " + localDateTime2.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         Instant instant = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toInstant();
         System.out.println("instant: " + instant);
         Date date = Date.from(instant);
