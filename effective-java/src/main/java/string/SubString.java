@@ -13,8 +13,11 @@ import java.util.StringTokenizer;
 public class SubString {
 
 	public static void main(String[] args) {
-		test1(generateString());
-		test2(generateString());
+		// test1(generateString());
+		// test2(generateString());
+		// String str="330200,330300,331000,330700,330100,330600,330500,330400,320500,320200,320600,320400,320100,320300,320800,321100,320900";
+		String str="";
+		test1(str);
 	}
 
 	private static void test1(String str) {

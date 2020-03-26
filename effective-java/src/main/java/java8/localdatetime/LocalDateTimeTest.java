@@ -12,7 +12,8 @@ import java.util.Date;
 public class LocalDateTimeTest {
     public static void main(String[] args) {
         // test1();
-        milliLong();
+        // milliLong();
+        minusHours();
     }
 
     private static void test1() {
@@ -36,7 +37,8 @@ public class LocalDateTimeTest {
     }
 
     public static void milliLong() {
-        String time = "1573008898000";
+        // String time = "1573008898000";
+        String time = "1585019631966";
         LocalDateTime localDateTime = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalDateTime();
         System.out.println("localDateTime: " + localDateTime);
         LocalDate localDate = Instant.ofEpochMilli(Long.valueOf(time)).atZone(ZoneId.systemDefault()).toLocalDate();
@@ -51,5 +53,12 @@ public class LocalDateTimeTest {
         System.out.println("instant: " + instant);
         Date date = Date.from(instant);
         System.out.println("date:-" + date);
+    }
+
+    public static void minusHours() {
+        Date now = new Date();
+        Instant instant = now.toInstant().minusSeconds(8 * 60 * 60);
+        System.out.println(now.getTime());
+        System.out.println(instant.toEpochMilli());
     }
 }
