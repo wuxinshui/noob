@@ -2,6 +2,7 @@ package java8.hugedata;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -13,6 +14,13 @@ public class HugeDataBitchTest {
 
     public static void main(String[] args) {
 
+        // huageData();
+
+        IntStream.of(1,2,3,1,2).distinct().forEach(System.out::print);
+
+    }
+
+    private static void huageData() {
         List<Integer> hugeData = Stream.iterate(0, i -> i + 1).limit(200).collect(Collectors.toList());
 
         List<Integer> subList = null;
@@ -22,7 +30,6 @@ public class HugeDataBitchTest {
             subList = hugeData.subList(from, to);
             subCall(subList);
         }
-
     }
 
     private static void subCall(List<Integer> integers) {
