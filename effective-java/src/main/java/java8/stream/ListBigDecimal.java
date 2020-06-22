@@ -11,6 +11,7 @@ import java.util.List;
 public class ListBigDecimal {
     public static void main(String[] args) {
         List<BigDecimal> ls = List.of(BigDecimal.valueOf(12), BigDecimal.valueOf(12), BigDecimal.valueOf(12));
+        // Here is a way to do it with only Java 8 and streams:
         BigDecimal sum = ls.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
         System.out.println(sum);
     }
