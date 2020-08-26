@@ -13,7 +13,8 @@ public class LocalDateTimeTest {
     public static void main(String[] args) {
         // test1();
         // milliLong();
-        minusHours();
+        // minusHours();
+        daily();
     }
 
     private static void test1() {
@@ -53,6 +54,18 @@ public class LocalDateTimeTest {
         System.out.println("instant: " + instant);
         Date date = Date.from(instant);
         System.out.println("date:-" + date);
+    }
+
+    public static void daily() {
+        LocalDateTime startLocal = LocalDateTime.of(LocalDate.now(), LocalTime.MIN);
+        LocalDateTime endLocal = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
+
+        System.out.println(startLocal);
+        System.out.println(endLocal);
+        Date start = Date.from(LocalDateTime.of(LocalDate.now(), LocalTime.MIN).atZone(ZoneId.systemDefault()).toInstant());
+        Date end = Date.from(LocalDateTime.of(LocalDate.now(), LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant());
+        System.out.println(start);
+        System.out.println(end);
     }
 
     public static void minusHours() {
