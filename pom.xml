@@ -25,7 +25,7 @@
     </modules>
 
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <commons-lang.version>2.6</commons-lang.version>
         <jcip-annotations.version>1.0</jcip-annotations.version>
     </properties>
