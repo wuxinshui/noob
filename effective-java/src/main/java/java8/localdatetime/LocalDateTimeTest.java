@@ -14,7 +14,46 @@ public class LocalDateTimeTest {
         // test1();
         // milliLong();
         // minusHours();
-        daily();
+        // daily();
+        System.out.println(new Date());
+        System.out.println(LocalDateTime.now().toString());
+        strDate();
+        strDate1();
+        // getDate();
+        // test2();
+    }
+
+    public static void getDate() {
+        Date now = new Date();
+        String date = LocalDate.ofInstant(Instant.ofEpochMilli(now.getTime()), ZoneId.systemDefault()).toString();
+        System.out.println(date);
+    }
+
+
+    public static void strDate() {
+        String str = "2017-09-28 17:07:05";
+        LocalDateTime localDateTime = LocalDateTime.parse(str, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(localDateTime);
+    }
+
+    public static void strDate1() {
+        String str = "Fri Mar 26 12:04:28 CST 2021";
+        LocalDateTime localDateTime = LocalDateTime.parse(str, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(localDateTime);
+    }
+
+    public static void strDate0() {
+        String str = "Thu Mar 25 18:52:17 CST 2021";
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.parse(str, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        System.out.println(localDateTime);
+    }
+
+    private static void test2() {
+
+        String str = LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+        System.out.println(str);
     }
 
     private static void test1() {
@@ -66,6 +105,10 @@ public class LocalDateTimeTest {
         Date end = Date.from(LocalDateTime.of(LocalDate.now(), LocalTime.MAX).atZone(ZoneId.systemDefault()).toInstant());
         System.out.println(start);
         System.out.println(end);
+        String startStr = LocalDateTime.of(LocalDate.now(), LocalTime.MIN).atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        String endStr = LocalDateTime.of(LocalDate.now(), LocalTime.MAX).atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(startStr);
+        System.out.println(endStr);
     }
 
     public static void minusHours() {
@@ -74,4 +117,14 @@ public class LocalDateTimeTest {
         System.out.println(now.getTime());
         System.out.println(instant.toEpochMilli());
     }
+
+    public static void minusRandomHours() {
+        Date now = new Date();
+        Instant instant = now.toInstant().minusSeconds(8 * 60 * 60);
+        System.out.println(now.getTime());
+        System.out.println(instant.toEpochMilli());
+        Date after = Date.from(instant);
+        System.out.println(after);
+    }
+
 }

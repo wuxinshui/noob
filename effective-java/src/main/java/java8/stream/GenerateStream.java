@@ -12,6 +12,21 @@ import java.util.stream.Stream;
  */
 public class GenerateStream {
     public static void main(String[] args) {
+        // test1();
+        test2();
+        Random random = new Random();
+        random.ints(100,300).limit(5).forEach(System.out::println);
+    }
+
+    private static void test2() {
+        Random random = new Random();
+        Supplier<Integer> supplier = random::nextInt;
+        Integer integer = Stream.generate(supplier).limit(2).findFirst().get();
+        System.out.println(integer);
+
+    }
+
+    private static void test1() {
         System.out.println("Stream.of Integer--------------------");
         Stream.of(2).forEach(System.out::println);
         System.out.println("Stream.of Integer String--------------------");
@@ -37,6 +52,5 @@ public class GenerateStream {
         Stream.generate(supplier).limit(5).forEach(System.out::println);
         System.out.println("Stream.iterate--------------------");
         Stream.iterate(0,n->n+3).limit(5).forEach(System.out::println);
-
     }
 }
