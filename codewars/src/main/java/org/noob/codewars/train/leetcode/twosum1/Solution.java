@@ -28,6 +28,7 @@ public class Solution {
         int target = 9;
         // System.out.println(Arrays.toString(twoSum9(nums, target)));
         System.out.println(Arrays.toString(twoSumHash(nums, target)));
+        System.out.println(1 << 30);
     }
 
     public int[] twoSum(int[] nums, int target) {
