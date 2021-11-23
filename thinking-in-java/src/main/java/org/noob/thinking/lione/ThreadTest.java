@@ -27,6 +27,7 @@ public class ThreadTest {
 
             System.out.println("i++:" + completableFuture.get(2, TimeUnit.SECONDS));
 
+            executorService1.shutdown();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -45,6 +46,9 @@ public class ThreadTest {
             CompletableFuture completableFuture = CompletableFuture.supplyAsync(() -> add(false), executorService2);
 
             System.out.println("i--:" + completableFuture.get());
+
+            executorService2.shutdown();
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
