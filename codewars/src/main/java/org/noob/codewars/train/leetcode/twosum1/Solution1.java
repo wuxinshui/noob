@@ -22,7 +22,7 @@ import java.util.*;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Date: Created in 2019/10/16 18:49
  */
-public class Solution {
+public class Solution1 {
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
         int target = 9;
