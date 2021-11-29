@@ -1,4 +1,4 @@
-package org.noob.codewars.train.leetcode.AddTwoNumbers2;
+package org.noob.codewars.train.leetcode.add_two_numbers2;
 
 public class ListNode {
     int val;
