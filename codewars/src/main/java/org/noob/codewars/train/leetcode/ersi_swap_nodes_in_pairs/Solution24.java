@@ -32,6 +32,15 @@ package org.noob.codewars.train.leetcode.ersi_swap_nodes_in_pairs;
  */
 public class Solution24 {
 
+    public static void main(String[] args) {
+        Solution24 solution24 = new Solution24();
+        ListNode node = ListNode.makeNode(4);
+        solution24.swapPairs_official_1(node);
+
+        ListNode.printNode(node);
+
+    }
+
     /**
      * 方法一：递归
      * 思路与算法
